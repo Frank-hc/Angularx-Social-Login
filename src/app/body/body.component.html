@@ -1,0 +1,53 @@
+<body >
+    <div class="container bg-white my-4 py-4 border">
+        <h4 class="text-black text-center titulo">
+            <img src="https://i.pinimg.com/originals/e8/3d/e3/e83de3eba0b4292efa91f0a001109da4.jpg" alt="Harley Logo" width="110" height="110">
+            M O T O R C Y C L E
+        </h4>
+        <div class="row">
+            <div class="col-md-4 mt-4 ml-4">
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action active lista">
+                      Cátalogo de Motos
+                    </a>
+                    <a class="dropdown-item mbw mt-2" (click)="variable=bmw">BMW GS 1200</a>
+                    <a class="dropdown-item harley" (click)="variable=harley">Harley Davidson 883</a>
+                    <a class="dropdown-item xr" (click)="variable=xr">Honda XR 250</a>
+                    <a class="dropdown-item fz" (click)="variable=fz">Yamaha FZ 16</a>
+                </div>
+            </div>
+            <div class="col-md-7 mt-4 ml-4" *ngIf="variable==vacio">
+                <img  class="animated fadeIn cortar" src='{{ fotoinicio }}' width="640" height="390" />
+            </div>
+            <div class="col-md-7 mt-4 ml-4" *ngIf="variable!=vacio">
+                <img  class="animated fadeIn" src='{{variable}}' width="640" height="390" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="bg-info mt-2">
+                <h4 class="mt-3 ml-3 animated fadeIn" *ngIf="variable==bmw">{{ titulos[0] }}</h4>
+                <p class="text-white mt-4 ml-3 mr-3 py-3 animated fadeIn" *ngIf="variable==bmw">
+                    {{ descripcion[0] }}
+                </p>
+            </div>
+            <div class="bg-danger mt-2">
+                <h4 class="mt-3 ml-3 animated fadeIn" *ngIf="variable==harley">{{ titulos[1] }}</h4>
+                <p class="text-white mt-4 ml-3 mr-3 animated fadeIn" *ngIf="variable==harley">                  
+                    {{ descripcion[1] }}
+                </p>
+            </div>
+            <div class="bg-warning mt-2">
+                <h4 class="mt-3 ml-3 animated fadeIn" *ngIf="variable==xr">{{ titulos[2] }}</h4>
+                <p class="text-white mt-4 ml-3 mr-3 py-4 animated fadeIn" *ngIf="variable==xr">                  
+                    {{ descripcion[2] }}
+                </p>
+            </div>
+            <div class="bg-success mt-2">
+                <h4 class="mt-3 ml-3 animated fadeIn" *ngIf="variable==fz">{{ titulos[3] }}</h4>
+                <p class="text-white mt-4 ml-3 mr-3 animated fadeIn" *ngIf="variable==fz">                  
+                        {{ descripcion[3] }}
+                </p>
+             </div>
+        </div>
+    </div>    
+</body>

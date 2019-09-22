@@ -1,0 +1,38 @@
+.contenedor:hover 
+.imagen {-webkit-transform:scale(1.2);transform:scale(1.2);}
+
+.mbw:hover {
+    transition: background-color .5s;
+    background-color: rgba(0, 140, 255, 0.767);
+    font-size: 17px;
+    font-weight: bold;
+  }
+.harley:hover {
+    transition: background-color .5s;
+    background-color: rgba(202, 33, 41, 0.822);
+    font-size: 17px;
+    font-weight: bold;
+  }
+.xr:hover {
+    transition: background-color .5s;
+    background-color: rgba(255, 230, 4, 0.801);
+    font-size: 17px;
+    font-weight: bold;
+  }
+.fz:hover {
+    transition: background-color .5s;
+    background-color: rgba(32, 185, 78, 0.753);
+    font-size: 17px;
+    font-weight: bold;
+  }
+.lista {
+    background-color: rgba(49, 47, 47, 0.863);
+    border-color: rgba(63, 57, 57, 0.863);
+  }
+.titulo {
+  font-size: 20px;
+  font-weight: bold;
+}
+.cortar {
+  border-radius: 8px;
+}

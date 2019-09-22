@@ -1,0 +1,47 @@
+.avatar {
+    /* cambia estos dos valores para definir el tamaño de tu círculo */
+    height: 115px;
+    width: 115px;
+    /* los siguientes valores son independientes del tamaño del círculo */
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    background-size: 100% auto;
+}
+.custom {
+    width: 78px !important;
+}
+.modal .modal-dialog { 
+    width: 25%; 
+} 
+.facebook {
+    background-color: #3b5998; 
+}
+.face:hover{
+    background-color: #27427c; 
+}
+.inputwhiticon input[type=text]{
+    padding-left: 35px;
+    margin-top: -8px;
+
+}
+.inputwhiticon{
+    position: relative;
+}
+.inputwhiticon i{
+    position: absolute;
+    left:0;
+    top:8px;
+    padding: 4px 12px;
+    color: rgba(105, 105, 105, 0.534);
+}
+.btningresar{
+    margin-top: -8px;
+    background-color: #1a1a1bd3;
+}
+.btningresar:hover{
+    background-color: #0a0a0aec;
+}
+
+
+

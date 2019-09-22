@@ -1,0 +1,82 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">© M O T O R C Y C L E</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+              
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#"> <span class="sr-only">(current)</span></a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="#"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
+                </li>
+            </ul>
+            <!-- Botón Modal -->
+            <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#exampleModal" *ngIf="!user">
+                Iniciar Sesión
+                <i class="fas fa-sign-in-alt"></i>
+            </button>
+            <div class="dropdown" *ngIf="user">
+                    <button class="btn btningresar text-white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ user.name }}
+                    </button>
+                    <div class="dropdown-menu text-center mt-2" aria-labelledby="dropdownMenuButton">
+                            <img class="avatar mt-2" src="{{ user.photoUrl }}">
+                            <h5 class="mt-2">{{ user.name }}</h5>
+                            <p class="ml-4 mr-4">{{ user.email }}</p> 
+                      <button type="button" class="btn btn-primary" (click)="signOut()">
+                            Cerrar sesión
+                            <i class="ml-1 fas fa-times-circle"></i>
+                      </button>
+                    </div>
+                  </div>   
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 class="modal-title" id="exampleModalLabel">¡Inicia sesión con tu cuenta de Motorcycle!</h6>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <button  type="button" class="btn btn-danger btn-block text-white" data-toggle="modal" data-target="#exampleModal" (click)="signInWithGoogle()">
+                                <i class="fab fa-google-plus-g mr-1"></i>
+                                Inicia sesión con Google
+                            </button>
+                            <button type="button" class="btn facebook btn-block text-white face" data-toggle="modal" data-target="#exampleModal">
+                                <i class="fab fa-facebook-f mr-1"></i>
+                                Inicia sesión con Facebook
+                            </button>
+                            <div class="dropdown-divider mt-3"></div>
+                            <form class="mt-4">
+                                <div class="form-group inputwhiticon">
+                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Usuario" required>
+                                    <i class="fa fa-user"></i>
+                                </div>
+                                <div class="form-group inputwhiticon">
+                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" required>
+                                    <i class="fas fa-lock"></i>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block btningresar">Iniciar sesión</button>
+                                <small id="emailHelp" class="form-text text-muted mt-2">* Usted acepta el contrato establecido por motorcycle ©</small>
+                            </form>  
+                        </div>        
+                        <div class="modal-footer ">
+                            <button type="button" class="btn btn-warning">¿No tienes cuenta?</button>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<app-home *ngIf="!user"></app-home>
+<app-body *ngIf="user"></app-body>
